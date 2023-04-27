@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_1.ico">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="module" src="./assets/js/script.js"></script>
+  <title>To Do List</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="header">
+      <img class="header__logo" src="./assets/images/entête_to_do_list.jpg" alt="entête to-do-list">
+
+      <p class="header__date">The <time id="current-date" datetime=""></time></p>
+
+      <h1 class="header__title">Tasks List</h1>
+    </header>
+
+
+    <div class="content">
+      <ul class="content__list">
+      </ul>
+
+      <form class="content__form">
+        <label class="content__label" for="input-task">To DO</label>
+        <input class="content__input" type="text" id="input-task" name="input-task">
+        <button class="content__submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
+    <button class="content__delete-btn">Delete all checked</button>
+  </div>
+  <footer class="footer">
+  </footer>
+
+</body>
+
+</html>
