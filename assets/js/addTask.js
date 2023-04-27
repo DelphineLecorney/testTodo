@@ -13,9 +13,10 @@ export function addTask() {
 
   // Crée un élément checkbox pour la tâche
   const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.name = "task-checkbox";
-  checkbox.value = taskName;
+  checkbox.setAttribute("type", "checkbox");
+  checkbox.setAttribute("name", "task-checkbox");
+  checkbox.setAttribute("value", taskName);
+
 
   // Crée un élément span pour afficher le nom de la tâche
   const span = document.createElement("span");
@@ -23,8 +24,9 @@ export function addTask() {
 
   // Crée un bouton de suppression pour la tâche
   const button = document.createElement("button");
-  button.textContent = "Delete";
-  button.addEventListener("click", function () {
+  button.setAttribute("type", "button");
+  button.innerText = "Delete";
+  button.addEventListener("click", function() {
     deleteTask(tasks.indexOf(taskName));
     li.remove();
   });

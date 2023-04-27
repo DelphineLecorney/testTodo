@@ -14,16 +14,30 @@ if (tasksFromLocalStorage) {
 export function displayTasks() {
   tasks.forEach((task) => {
     const li = document.createElement("li");
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.name = "task-checkbox";
-    checkbox.value = task;
+    const checkbox = document.createElement("input")
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("name", "task-checkbox");
+    checkbox.setAttribute("value", task);
+    // const li = document.createElement("li");
+    // const checkbox = document.createElement("input");
+    // checkbox.type = "checkbox";
+    // checkbox.name = "task-checkbox";
+    // checkbox.value = task;
 
     const span = document.createElement("span");
     span.innerText = task;
 
+    // const button = document.createElement("button");
+    // button.textContent = "Delete";
+
+     // Crée un bouton de suppression pour la tâche
     const button = document.createElement("button");
-    button.textContent = "Delete";
+    button.setAttribute("type", "button");
+    button.innerText = "Delete";
+    button.addEventListener("click", function() {
+      deleteTask(tasks.indexOf(taskName));
+      li.remove();
+    });
 
     button.addEventListener("click", function () {
       const list = document.querySelector(".content__list");

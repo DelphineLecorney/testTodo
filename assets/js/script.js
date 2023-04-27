@@ -2,6 +2,7 @@ import { addTask } from "./addTask.js";
 import { deleteTasksCheckBox } from "./deleteTasksCheckBox.js";
 import { updateDate } from "./updateDate.js";
 import { displayTasks } from "./displayTasks.js";
+import { deleteTask } from "./deleteTask.js";
 // updateDate est appelé immédiatement et ensuite toutes
 // les 24 heures à l'aide de la fonction setInterval pour
 // mettre à jour la date dans la page.
@@ -27,14 +28,13 @@ if (tasksFromLocalStorage) {
     console.error("Error parsing tasks from localStorage", error);
   }
 }
-
+deleteTask(tasks);
 displayTasks(tasks);
 
 const deleteButton = document.querySelector(".content__delete-btn");
 deleteButton.addEventListener("click", function () {
   const list = document.querySelector(".content__list");
   const checkboxes = list.querySelectorAll("input[type='checkbox']");
-
   checkboxes.forEach(function (checkbox, index) {
     if (checkbox.checked) {
       deleteTasksCheckBox(tasks, index);
