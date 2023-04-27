@@ -1,8 +1,7 @@
-import { deleteTasksCheckBox } from "./deleteTasksCheckBox.js";
 
 let tasks = [];
 const tasksFromLocalStorage = localStorage.getItem("tasks");
-
+// Vérifie le local storage
 if (tasksFromLocalStorage) {
   try {
     tasks = JSON.parse(tasksFromLocalStorage);
@@ -22,28 +21,17 @@ export function displayTasks() {
     const span = document.createElement("span");
     span.innerText = task;
 
-     // Crée un bouton de suppression pour la tâche
+    // Crée un bouton de suppression pour la tâche
     const button = document.createElement("button");
     button.setAttribute("type", "button");
     button.innerText = "Delete";
     button.addEventListener("click", function() {
-      deleteTask(tasks.indexOf(taskName));
-      li.remove();
-    });
-
-    button.addEventListener("click", function () {
-      const list = document.querySelector(".content__list");
-      const checkboxes = list.querySelectorAll("input[type='checkbox']");
-
-      checkboxes.forEach(function (checkbox, i) {
-        if (checkbox.checked) {
-          const index = i;
-          if (index >= 0 && index < tasks.length) {
-            deleteTasksCheckBox(index);
-            list.removeChild(checkbox.parentNode);
-          }
-        }
-      });
+      const index = tasks.indexOf(task);
+      if (index !== -1) {
+        tasks.splice(index, 1);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        li.remove();
+      }
     });
 
     li.appendChild(checkbox);

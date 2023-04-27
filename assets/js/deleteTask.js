@@ -1,6 +1,3 @@
-// Fonction deleteTask qui prend un index en entrée et supprime une tâche du stockage local
-// par cet indexet supprime une tâche du stockage local par cet index
-
 export function deleteTask(index) {
   // localStorage.getItem : récupérer les tâches existantes dans le stockage local
   // Analyse la chaîne JSON en un tableau JavaScript en utilisant JSON.parse().
@@ -11,3 +8,4 @@ export function deleteTask(index) {
     localStorage.setItem("tasks", JSON.stringify(tasks)); // Sauvegarde du tableau
   }
 }
+

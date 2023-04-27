@@ -1,8 +1,8 @@
 import { deleteTask } from "./deleteTask.js";
 
-let tasks = [];
-
 export function addTask() {
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
   // Récupère la valeur de l'input
   const input = document.getElementById("input-task");
   const taskName = input.value;
@@ -16,7 +16,6 @@ export function addTask() {
   checkbox.setAttribute("type", "checkbox");
   checkbox.setAttribute("name", "task-checkbox");
   checkbox.setAttribute("value", taskName);
-
 
   // Crée un élément span pour afficher le nom de la tâche
   const span = document.createElement("span");
@@ -39,6 +38,7 @@ export function addTask() {
   // Ajoute l'élément li à la liste de tâches
   const list = document.querySelector(".content__list");
   list.appendChild(li);
+
   tasks.push(taskName);
   // Stocke la liste des tâches dans le localStorage
   localStorage.setItem("tasks", JSON.stringify(tasks));

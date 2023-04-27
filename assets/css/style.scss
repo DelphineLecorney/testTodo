@@ -4,8 +4,6 @@ body {
     height: 100vh;
     font-size: 20px;
     overflow: hidden;
-    @media screen and (min-width: 400px) {
-    }
 }
 .container {
     display: flex;
@@ -36,8 +34,8 @@ body {
 
         &__list {
             list-style: none;
-            margin: 10;
-            padding: 10;
+            margin: 10px;
+            padding: 10px;
             width: 100%;
             max-height: 100%;
             overflow-y: auto;
@@ -74,11 +72,25 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.button-img:hover {
+
+.button img {
+    background: url(../images/img-delete.jpg);
+    background-size: 10px 10px;
+    box-shadow: 2px 2px 1px 1px rgb(115, 214, 106);
+    width: 10px;
+    height: 10px;
+}
+
+
+.button img:hover {
     background-color: #b5dd92;
 }
 
 .header {
+    &__logo {
+        max-width: 100%;
+        height: auto;
+    }
     &__date {
         font-size: 25px;
         color: #8293b3;
@@ -93,8 +105,12 @@ body {
         text-align: center;
         text-decoration: underline;
     }
-    &__image {       
-        text-align: center;
+}
+@media screen and (max-width: 550px) {
+    .header__image {
         width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
     }
 }
