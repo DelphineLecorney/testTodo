@@ -18,17 +18,9 @@ export function displayTasks() {
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("name", "task-checkbox");
     checkbox.setAttribute("value", task);
-    // const li = document.createElement("li");
-    // const checkbox = document.createElement("input");
-    // checkbox.type = "checkbox";
-    // checkbox.name = "task-checkbox";
-    // checkbox.value = task;
 
     const span = document.createElement("span");
     span.innerText = task;
-
-    // const button = document.createElement("button");
-    // button.textContent = "Delete";
 
      // Crée un bouton de suppression pour la tâche
     const button = document.createElement("button");
