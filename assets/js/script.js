@@ -2,7 +2,6 @@ import { addTask } from "./addTask.js";
 import { deleteTasksCheckBox } from "./deleteTasksCheckBox.js";
 import { updateDate } from "./updateDate.js";
 import { displayTasks } from "./displayTasks.js";
-import { deleteTask } from "./deleteTask.js";
 
 // Mettre à jour la date dans la page.
 updateDate();
@@ -27,8 +26,9 @@ if (tasksFromLocalStorage) {
     console.error("Error parsing tasks from localStorage", error);
   }
 }
-deleteTask(tasks);
+
 displayTasks(tasks);
+
 // Ajout d'un event
 const deleteButton = document.querySelector(".content__delete-btn");
 deleteButton.addEventListener("click", function () {

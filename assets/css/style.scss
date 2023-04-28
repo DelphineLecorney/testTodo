@@ -71,20 +71,12 @@ body {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-
-
-.button img {
-    background: url(../images/img-delete.jpg);
-    background-size: 10px 10px;
+.button {
+    width: 20px;
+    height: 20px;
     box-shadow: 2px 2px 1px 1px rgb(115, 214, 106);
-    width: 10px;
-    height: 10px;
 }
-
-
-.button img:hover {
-    background-color: #b5dd92;
-}
+   
 
 .header {
     &__logo {
