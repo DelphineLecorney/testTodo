@@ -1,11 +1,16 @@
-import { addTask } from "./addTask.js";
-import { deleteTasksCheckBox } from "./deleteTasksCheckBox.js";
+
 import { updateDate } from "./updateDate.js";
+import { addTask } from "./addTask.js";
 import { displayTasks } from "./displayTasks.js";
+import { deleteTasksCheckBox } from "./deleteTask.js";
+import { retrieveLocalStorage } from "./retrieveLocalStorage.js";
 
 // Mettre à jour la date dans la page.
 updateDate();
 setInterval(updateDate, 24 * 60 * 60 * 1000);
+
+// Appel de la fonction pour récupérer les tâches
+const tasks = retrieveLocalStorage();
 
 // Ajout d'un écouteur d'événement submit qui empêche le formulaire
 // de se soumettre et appelle la fonction addTask
@@ -14,20 +19,6 @@ form.addEventListener("submit", function (event) {
   event.preventDefault(); // Empêche le formulaire de se soumettre
   addTask();
 });
-
-export let tasks = [];
-// Récupère les tâches stockées
-const tasksFromLocalStorage = localStorage.getItem("tasks");
-// Vérifie s'il y a des tâches
-if (tasksFromLocalStorage) {
-  try { // Conversion en JSON pour stocker
-    tasks = JSON.parse(tasksFromLocalStorage);
-  } catch (error) { // Message au cas où cela échoue
-    console.error("Error parsing tasks from localStorage", error);
-  }
-}
-
-displayTasks(tasks);
 
 // Ajout d'un event
 const deleteButton = document.querySelector(".content__delete-btn");
@@ -41,4 +32,4 @@ deleteButton.addEventListener("click", function () {
     }
   });
 });
-
+displayTasks(tasks);

@@ -1,7 +1,10 @@
 import { deleteTask } from "./deleteTask.js";
+import { retrieveLocalStorage } from "./retrieveLocalStorage.js";
+
+// Appel de la fonction pour récupérer les tâches
+const tasks = retrieveLocalStorage();
 
 export function addTask() {
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
   // Récupère la valeur de l'input
   const input = document.getElementById("input-task");
@@ -25,7 +28,7 @@ export function addTask() {
   const button = document.createElement("button");
   button.setAttribute("type", "button");
   button.innerText = "Delete";
-  button.addEventListener("click", function() {
+  button.addEventListener("click", function () {
     deleteTask(tasks.indexOf(taskName));
     li.remove();
   });

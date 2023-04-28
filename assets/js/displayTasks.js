@@ -1,23 +1,18 @@
+import { retrieveLocalStorage } from "./retrieveLocalStorage.js";
 
-let tasks = [];
-const tasksFromLocalStorage = localStorage.getItem("tasks");
-// Vérifie le local storage
-if (tasksFromLocalStorage) {
-  try {
-    tasks = JSON.parse(tasksFromLocalStorage);
-  } catch (error) {
-    console.error("Error parsing tasks from localStorage", error);
-  }
-}
+// Appel de la fonction pour récupérer les tâches
+const tasks = retrieveLocalStorage();
 
 export function displayTasks() {
   tasks.forEach((task) => {
+    // Crée un nouvel élément li pour la tâche
     const li = document.createElement("li");
+    // Crée un élément checkbox pour la tâche
     const checkbox = document.createElement("input")
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("name", "task-checkbox");
     checkbox.setAttribute("value", task);
-
+    // Crée un élément span pour afficher le nom de la tâche
     const span = document.createElement("span");
     span.innerText = task;
 
@@ -33,11 +28,11 @@ export function displayTasks() {
         li.remove();
       }
     });
-
+    // Ajoute la checkbox, le span et le bouton à l'élément li
     li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(button);
-
+    // Ajoute l'élément li à la liste de tâches
     const list = document.querySelector(".content__list");
     list.appendChild(li);
   });
