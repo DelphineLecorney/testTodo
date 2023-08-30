@@ -4,6 +4,8 @@
 
 ## Create a to-do list with these requirements :smirk:
 
+![Lien vers la todolist](https://github.com/DelphineLecorney/testTodo/assets/102812607/42b3514b-b29d-4ac0-b958-f8035678d09a)
+
 > #### This is an exercise in Becode training. :+1:
 
 * 🔭 **Project to be completed in 3 days (April 25-26-27, 2023)**
