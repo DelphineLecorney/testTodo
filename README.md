@@ -2,7 +2,7 @@
 
 ## Create a to-do list with these requirements :smirk:
 
-<img src="https://github.com/DelphineLecorney/testTodo/assets/102812607/42b3514b-b29d-4ac0-b958-f8035678d09a" alt="todolist" height="100" width="100" />
+<img src="https://github.com/DelphineLecorney/testTodo/assets/102812607/42b3514b-b29d-4ac0-b958-f8035678d09a" alt="todolist" height="300" width="300" />
 
 
 [Link to Todolist](https://delphinelecorney.github.io/testTodo/)
