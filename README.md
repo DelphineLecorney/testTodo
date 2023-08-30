@@ -1,12 +1,10 @@
 # ✨ To Do List✨
 
-> ## Hi ! I'm Delphine !
-
 ## Create a to-do list with these requirements :smirk:
 
 ![todolist](https://github.com/DelphineLecorney/testTodo/assets/102812607/42b3514b-b29d-4ac0-b958-f8035678d09a)
 
-[Lien vers la Todolist](https://delphinelecorney.github.io/testTodo/)
+[Link to Todolist](https://delphinelecorney.github.io/testTodo/)
 
 > #### This is an exercise in Becode training. :+1:
 
